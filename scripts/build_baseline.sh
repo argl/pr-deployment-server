@@ -62,9 +62,12 @@ run_or_fail npm ci
 run_or_fail npm run build-redirects
 run_or_fail npm run build-canonicals
 
-echo "ORIGIN_MAIN="localhost" \
+echo 'ORIGIN_MAIN="localhost" \
 ORIGIN_LIVE_SAMPLES="localhost" \
-SOURCE_CONTENT=http://localhost:8100/" > .env
+SOURCE_CONTENT=http://localhost:8100/' > .env
+
+# run cloud function
+run_or_fail npm start
 
 
 # other env variables in play
